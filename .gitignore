@@ -10,3 +10,11 @@ terraform/*.tfstate.*
 terraform/crash.log
 terraform/crash.*.log
 terraform/*.tfvars
+
+# Terraform state
+terraform/**/*.tfstate
+terraform/**/*.tfstate.*
+
+# Terraform state
+terraform/**/*.tfstate
+terraform/**/*.tfstate.*
