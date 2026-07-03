@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: devopsenterpriseacr6267.azurecr.io/flask-aks-app
+  tag: v1
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 50
+
+probes:
+  path: /health
+  port: 5000
