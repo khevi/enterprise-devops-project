@@ -24,3 +24,8 @@ variable "vm_subnet_name" {
 variable "vm_subnet_prefixes" {
   default = ["10.10.2.0/24"]
 }
+
+variable "tags" {
+  type    = map(string)
+  default = {}
+}
