@@ -37,12 +37,6 @@ jobs:
           --name $AKS_CLUSTER \
           --overwrite-existing
 
-    - name: Deploy to AKS
-      run: |
-        kubectl set image deployment/flask-aks-app \
-          flask-aks-app=$ACR_NAME.azurecr.io/$IMAGE_NAME:${{ github.sha }} \
-          -n devops-app
-
     - name: Deploy to AKS with Helm
       run: |
         helm upgrade --install flask-app ./helm/flask-app \
