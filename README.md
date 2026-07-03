@@ -1,40 +1,105 @@
-# Enterprise DevOps Project on Azure
+# Enterprise DevOps Platform
 
-This project demonstrates a complete cloud-native deployment on Azure Kubernetes Service (AKS).
+An enterprise-style DevOps engineering project focused on cloud infrastructure, Infrastructure as Code, CI/CD automation, containers, Kubernetes, Helm, GitOps, and observability.
 
-## Technologies
+## Project Objectives
 
-- Azure Kubernetes Service (AKS)
-- Azure Container Registry (ACR)
-- Docker
-- Kubernetes
-- Flask
-- Azure CLI
+- Provision cloud infrastructure using Terraform
+- Build reusable Infrastructure as Code modules
+- Implement segmented cloud networking
+- Containerize application workloads with Docker
+- Automate validation using GitHub Actions
+- Define Kubernetes workloads using declarative manifests
+- Package applications using Helm
+- Manage deployments using Argo CD GitOps workflows
+- Integrate monitoring with Prometheus and Grafana
 
-## Architecture
+## Technology Stack
 
-GitHub
-   ↓
-Docker Build
-   ↓
-Azure Container Registry
-   ↓
+| Area | Technologies |
+|---|---|
+| Cloud | Microsoft Azure |
+| Infrastructure as Code | Terraform |
+| Containers | Docker |
+| Orchestration | Kubernetes |
+| Packaging | Helm |
+| GitOps | Argo CD |
+| CI/CD | GitHub Actions |
+| Monitoring | Prometheus, Grafana |
+| Application | Python, Flask |
+
+## Repository Structure
+
+```text
+.github/workflows/      GitHub Actions workflows
+app/                    Flask application and Docker files
+argocd/applications/    Argo CD application definitions
+helm/flask-app/         Helm chart for the Flask app
+k8s/                    Kubernetes manifests
+terraform/              Terraform environments and modules
+
+Completed Work
+Azure Terraform networking foundation
+Multi-tier VNet/subnet architecture
+Web, application, and database subnets
+Network Security Groups for each tier
+Reusable Terraform module structure
+GitHub Actions workflow structure
+Flask application containerization
+Kubernetes manifest structure
+Helm application chart
+NGINX ingress support in Helm
+Argo CD application definitions
+GitOps validation for the Flask application
+Architecture
+GitHub Repository
+      |
+      v
+GitHub Actions
+      |
+      v
+Terraform Validation
+      |
+      v
+Azure Infrastructure
+
+Virtual Network: 10.10.0.0/16
+├── Web Subnet: 10.10.1.0/24
+├── App Subnet: 10.10.2.0/24
+└── DB Subnet:  10.10.3.0/24
+DevOps Practices Demonstrated
+Infrastructure as Code
+Cloud networking
+Terraform module design
+CI/CD automation
+Docker containerization
+Kubernetes workload management
+Helm application packaging
+Argo CD GitOps
+Version-controlled infrastructure
+Platform engineering
+Current Status
+
+This project is actively being developed as a multi-phase enterprise DevOps platform.
+
+In Progress
+Expanded Azure infrastructure
+Kubernetes platform infrastructure
+Container registry integration
+End-to-end CI/CD automation
+Expanded observability
+Security controls
+Roadmap
 Azure Kubernetes Service
-   ↓
-LoadBalancer Service
-   ↓
-Flask Application
+Azure Container Registry
+Terraform remote state
+Azure Key Vault
+Automated container image delivery
+Multi-environment DEV, TEST, and PROD patterns
+Multi-cloud infrastructure patterns
+Author
 
-## Application
+Kossi Hevi-Doglan
+Senior DevOps Engineer | Platform Engineer | Cloud Infrastructure Engineer
 
-The application exposes:
-
-- `/`
-- `/health`
-
-The application is deployed with:
-
-- 2 replicas
-- Kubernetes Deployment
-- Kubernetes LoadBalancer Service
-
+GitHub: @khevi
