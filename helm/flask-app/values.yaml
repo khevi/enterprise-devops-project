@@ -27,3 +27,7 @@ autoscaling:
 probes:
   path: /health
   port: 5000
+
+ingress:
+  enabled: true
+  host: flask.devopshevi.xyz
